@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    background-color: rgb(42, 94, 95);
+  }
+
+  .cards {
+    display: flex;
+    
+  }
+
+  .verticalCard {
+    background-color: white;
+    width: 350px;
+    height: 550px;
+    text-align: center;
+    display: grid;
+    margin: 50px 100px 0px 50px;
+  }
+
+  .verticalHeader {
+    display: grid;
+    justify-items: end;
+    align-items: start;
+    height: 5px;
+  }
+
+  .online {
+    color: rgb(193, 193, 193);
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 14px;
+
+  }
+
+  .profilePic {
+    width: 150px;
+    border: 5px solid rgb(129, 206, 143);
+    border-radius: 50%;
+  }
+
+  .picAndName {
+    margin-top: -10px;
+  }
+
+  .grayBG {
+    background-color: rgb(243, 243, 243);
+  }
+
+  .stars {
+    padding-top: 20px;
+    height: 50px;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .call {
+    background-color: rgb(130, 206, 144);
+    color: white;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .callIcon {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .sms {
+    background-color: rgb(116, 186, 130);
+    color: white;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr;           
+  }
+
+  .smsIcon {
+    align-self: center;
+    justify-self: center;
+  }
