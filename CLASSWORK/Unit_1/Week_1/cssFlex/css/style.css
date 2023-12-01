@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    height: 60vh;
+    width: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
+    grid-template-areas:
+      "header header"
+      "main main"
+      "article article"
+      "phone talk";
+  }
+  
+  
+  header, main, article, footer {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-style: solid;
+    border-width: 2px;
+    border-color: red; */
+  }
+  
+  
+  header {
+    background-color: #ffffff;
+    grid-area: header;
+  }
+  
+  header > nav {
+    margin-left: auto;
+    margin-right: 10px;
+    color: #d7d7d7;
+  }
+   
+  h2 {
+    font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  main {
+    background-color: #f3f3f3;
+    grid-area: main;
+    font-size: 20px;
+    gap: 10px;
+    }
+  
+  article {
+    background-color: white;
+    grid-area: article;
+    font-size: 20px;
+    gap: 5px;
+    
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    }
+  
+  
+  .phone {
+    grid-area: phone;
+    background-color: #66d189
+  }
+  
+  .talk {
+    grid-area: talk;
+    background-color: #5abd7c
+  }
+  
+  .phoneImg {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .talkImg {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .star {
+    width: 150px;
+  }
+
+  .person {
+    width: 115px;
+    height: 115px;
+    border-radius:50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #9be3b5;
+  }
+  
+  span {
+    color: #8f9092
+  }
+  
+  h4 {
+    margin: 0;
+    margin-top: 3px;
+    font-weight: 200;
+  }
+  
+  strong {
+    font-size: 22px;
+  }
+  
+  
