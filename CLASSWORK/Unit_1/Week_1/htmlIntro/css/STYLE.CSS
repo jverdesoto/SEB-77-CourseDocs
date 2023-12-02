@@ -1,0 +1,30 @@
+artlicle {
+    height: 4rem;
+    width: 20rem;
+    border: 0.5rem solid orange;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+span {
+    color: orange;
+}
+#id-name {
+    margin-top: 1rem;
+}
+
+.myclass {
+
+}
+
+span.myclass {
+
+}
+
+input.todo-input {
+    margin-top:2rem;
+}
