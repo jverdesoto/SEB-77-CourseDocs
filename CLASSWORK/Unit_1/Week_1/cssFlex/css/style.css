@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+    box-sizing: inherit;
+}
+body {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.checked {
+    color: orange;
+  }
+
+main {
+    width: 300px;
+    background-color: white;
+    text-align: center;
+    /* font-size: 2rem; */
+
+}
+
+#status {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: gray;
+    padding: 10px 20px 0 0;
+
+}
+
+img {
+    border-radius: 50%;
+    border: green 4px solid;
+   
+}
+
+h1, p {
+    margin: .5px;
+}
+
+h1 {
+    font-size: 2.1rem;
+    padding: 8px;
+}
+#occupation {
+    background-color: lightgray;
+    padding: 16px;
+}
+
+#brand {
+    display: none;
+}
+
+#offer {
+    padding: 16px;
+}
+
+#contact {
+    display: flex;
+    
+}
+
+#contact >p {
+    height: 60px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact >p:first-child {
+    background-color: green;
+}
+
+#contact >p:last-child {
+    background-color: rgb(17, 54, 17);
+
+}
