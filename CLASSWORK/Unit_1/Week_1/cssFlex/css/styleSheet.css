@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    background-color: #0f5f60;
+  }
+
+  .bold-me{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .grid-container{
+    display: grid;
+    margin: 15% auto;
+    width: 400px;
+    height: 650px;
+    background-color: white;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 160px 1fr 80px 50px 130px 2fr;
+    
+    
+   
+  }
+
+  .grid-container > div{
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.grid-container > div:nth-child(1){
+    grid-column: 1 / span 3;
+    text-align: right;
+    padding: 2% 2%;
+    color: lightgray;
+}
+
+.grid-container > div:nth-child(2){
+    grid-column: span 3;
+    
+    
+}
+
+.grid-container > div:nth-child(3){
+    grid-column: span 3;
+    font-size: 25px;
+    
+
+}
+
+.grid-container > div:nth-child(4){
+    grid-column: span 3;
+    background-color: rgb(211, 211, 211, 0.5);
+}
+
+.grid-container > div:nth-child(5){
+    grid-column: span 3;
+    background-color: rgb(211, 211, 211, 0.5);
+}
+
+.grid-container > div:nth-child(6){
+    grid-column: span 3;
+    margin: auto;
+}
+
+.grid-container > div:nth-child(7){
+background-color: #66d189;
+
+}
+.grid-container > div:nth-child(7) > p{
+    background-color: #66d189;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.grid-container > div:nth-child(8){
+   background-color: #5abd7c;
+}
+
+   .grid-container > div:nth-child(8) > p{
+    background-color: #5abd7c;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+div > .profile-photo{
+    border-radius: 50%;
+    border: 4px #65e52c solid;
+    height: 85%;
+}
+.stars{
+    max-width: 100%;
+    display: inline;
+}
