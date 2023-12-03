@@ -1,0 +1,52 @@
+/* img {
+    max-width: 500px;
+} */
+html, body{
+    height: 100%;
+    width: 100%
+}
+
+article {
+    height : 4rem;
+    width: 20rem;
+    border: 0.5rem solid orange;
+    padding: 0.5rem;
+    margin: 1 rem;
+}
+
+/* Rem - Root em =  font size of the HTML element = by default the font size is usually 16px in length*/
+
+/* CSS Box MOdel */
+/* heihgt s only applied to the content */
+
+span{
+    color : orange;
+}
+
+#id{
+    margin-top: 1rem;
+    border: 0.3rem dotted orange;
+    border-radius: 0.5rem;
+}
+
+.class1, .class2{
+    margin-top: 2rem;
+}
+
+a[href= "attribute selector"]{
+    text-decoration: underline;
+}
+
+/* combinator */
+h3.class span{
+    /* will only select the span that lies in a class of h3 inside of an h3 */
+}
+
+div > p{
+    /* styleing p tag that is a direct child of a div */
+}
+article:hover{
+    background-color: orange;
+    color:white;
+    cursor: pointer;
+}
