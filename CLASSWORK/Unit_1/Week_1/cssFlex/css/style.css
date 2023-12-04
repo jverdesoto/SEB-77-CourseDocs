@@ -96,6 +96,7 @@
 
   .card__horizontal-price {
     padding: 1rem;
+    background: rgb(241, 241, 241);
   }
 
   .card__horizontal-price p {
