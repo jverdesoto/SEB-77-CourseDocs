@@ -121,22 +121,25 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
-
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
-
-myDiv.appendChild(title)
-
-document.getElementById('app').appendChild(myDiv)
-
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
-
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+const app = document.getElementById('app')
+const card = document.getElementsByClassName('card')[0]
+function createCard(arr) {
+	for (let i = 0; i < arr.length; i++) {
+		const container = document.createElement('div')
+		container.classList.add('container')
+		const image = document.createElement('img')
+		image.setAttribute('src', arr[i].cover)
+		const title = document.createElement('div')
+		title.innerHTML = `<h4>${arr[i].title}</h4>`
+		const body = document.createElement('div')
+		body.innerText = arr[i].body
+		
+		
+		container.appendChild(image)
+		container.appendChild(title)
+		container.appendChild(body)
+		card.appendChild(container)
+	}
+	
 }
-
-createCards(data)
+createCard(data)
