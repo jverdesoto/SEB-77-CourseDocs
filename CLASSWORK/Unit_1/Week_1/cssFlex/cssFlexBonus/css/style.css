@@ -20,7 +20,6 @@ header img {
 
 body > div {
     margin: auto;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +37,7 @@ body > div > div {
 header p{
     color: rgba(124, 124, 124, 0.42);
     margin-left: 10px;
-    font-size: smaller;
+    font-size: 10px;
 }
 
 header {
@@ -96,6 +95,7 @@ main div:nth-of-type(1) p {
     color: rgba(124, 124, 124, 0.42);
     border-left: 2px solid #64ba47;
     padding-left: 10px;
+    font-size: 16px;
 }
 
 main div img {
@@ -105,3 +105,4 @@ main div img {
 h1 {
     margin-bottom: 10px;
 }
+
