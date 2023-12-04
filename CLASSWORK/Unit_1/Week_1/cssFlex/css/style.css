@@ -19,7 +19,7 @@
       "article article"
       "phone talk";
   }
-  
+
   
   header, main, article, footer {
     grid-column: span 2;
