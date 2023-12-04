@@ -121,22 +121,56 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+// const title = document.createElement('img')
+// const myDiv = document.createElement('div')
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+// title.setAttribute('src', data[0].cover)
+// title.classList.add('myClass', 'myOtherClass')
 
-myDiv.appendChild(title)
+// myDiv.appendChild(title)
 
-document.getElementById('app').appendChild(myDiv)
+// document.getElementById('app').appendChild(myDiv)
 
 // document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
+
+
 function createCards(arr) {
     arr.map((post)=>{
-        console.log(post.cover);
-    })
+        let app = document.getElementById("app");
+		let firstDiv = document.createElement("div");
+		app.appendChild(firstDiv);
+		firstDiv.className = "card";
+		firstDiv.style.width = "18rem";
+		
+		let firstImg = document.createElement("img");
+		firstDiv.appendChild(firstImg);
+		firstImg.setAttribute("src", post.cover);
+		firstImg.setAttribute("alt", `Created at ${post.createdAt}`);
+		firstImg.className = "card-img-top";
+		
+		let secondDiv = document.createElement("div");
+		firstDiv.appendChild(secondDiv);
+		secondDiv.className = "card-body";
+
+		let firstH5 = document.createElement("h5");
+		secondDiv.appendChild(firstH5);
+		firstH5.className = "card-title";
+		firstH5.innerText = post.title;
+
+		let firstP = document.createElement("p");
+		secondDiv.appendChild(firstP);
+		firstP.className = "card-text";
+		firstP.innerText = post.body;
+
+		let firstA = document.createElement("a");
+		secondDiv.appendChild(firstA);
+		firstA.className = "btn btn-primary";
+		firstA.setAttribute("href", post.authorAvatar);
+		firstA.setAttribute("target", "_blank")
+		firstA.innerText = `Click Here to see ${post.authorName}`
+	
+    });
 }
 
-createCards(data)
+createCards(data);
