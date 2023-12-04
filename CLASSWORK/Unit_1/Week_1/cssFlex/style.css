@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    margin: 0;
+    font-family: Helvetica,
+}
+
+.profile {
+    background-color: 255,255,255;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    align-content: center;
+    height: auto;
+}
+
+.profile-image {
+    grid-column: span 8;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 5px solid rgb(130, 207, 143);
+    border-radius: 50%;
+}
+
+.profile-name {
+    grid-column: span 8;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+.rating {
+    grid-column: span 8;
+    background-color: rgb(243,243,243);
+    text-align: center;
+    padding-top: 15px;
+    font-size: larger;
+  }
+
+.rating img {
+    width: 300px;
+    height: 50px;
+    padding: 0 20px 0 20px;
+}
+
+.costing {
+    grid-column: span 8;
+    text-align: center;
+  }
+
+.contact {
+    grid-column: span 8;
+    background-color: rgb(130, 207, 143);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+
+.phone, .message {
+    text-align: center;
+}
+
+.phone {
+    flex: 1;
+}
+
+.message {
+    flex: 1;
+}
