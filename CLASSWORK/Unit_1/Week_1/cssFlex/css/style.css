@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  
+  .div1 {
+    grid-area: 1 / 1 / 4 / 3;
+  }
+  
+  .div2 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  
+  .div3 {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  
+  .div4 {
+    grid-area: 1 / 3 / 5 / 6;
+  }
+  
+  .ctr {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ctr4 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: 45px;
+  }
+  
+  .div1 {
+    background-color: #fff;
+    flex-direction: column;
+  }
+  
+  .div2 {
+    background-color: rgb(130, 207, 144);
+  }
+  
+  .div3 {
+    background-color: rgb(116, 187, 129);
+  }
+  
+  .div4 {
+    background-color: rgb(243, 241, 241);
+    flex-direction: column;
+  }
+  
+  .img1 {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 5px solid rgb(116, 187, 129);
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .img1 img {
+    width: 100%;
+    height: auto;
+  }
+  
+  p {
+    font-size: 40px;
+    margin-top: 0;
+  }
+  
+  .info {
+    width: fit-content;
+    font-size: 30px;
+    border-left: 10px solid green;
+    margin-left: 190px;
+  }
+  
+  .cost {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 190px;
+  }
+  
+  .job {
+    display: flex;
+    margin-left: 190px;
+    padding-top: 20px;
+  }
+  
+  #starsImg {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    transform: scale(2);
+    display: flex;
+    padding: 10px;
+    margin-left: 230px;
+    padding-top: 20px;
+  }
+  
+  #on {
+    margin-right: auto;
+    padding-left: 10px;
+    color: rgb(163, 163, 163);
+  }
+  
+  #name {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
