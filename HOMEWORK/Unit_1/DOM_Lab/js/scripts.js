@@ -121,22 +121,88 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+// const title = document.createElement('img')
+// const myDiv = document.createElement('div')
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+// title.setAttribute('src', data[0].cover)
+// title.classList.add('myClass', 'myOtherClass')
 
-myDiv.appendChild(title)
+// myDiv.appendChild(title)
 
-document.getElementById('app').appendChild(myDiv)
+// document.getElementById('app').appendChild(myDiv)
 
 // document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+// function createCards(arr) {
+//     arr.map((post)=>{
+//         console.log(post.cover);
+//     })
+// }
+
+// createCards(data)
+
+
+// questions: margin breaks it; display flex + width why doesn't it work; how to make the date 'presentable'; align by footer not working (Use card groups to render cards as a single, attached element with equal width and height columns. Card groups start off stacked and use display: flex; to become attached with uniform dimensions starting at the sm breakpoint.)
+
+
+
+function createCard(arr) {
+
+	const containerDiv = document.createElement('div')
+	containerDiv.className = 'container'
+	document.body.appendChild(containerDiv)
+
+	const rowDiv = document.createElement('div')
+	rowDiv.className = 'row'
+	containerDiv.appendChild(rowDiv)
+
+	const columnsDiv = document.createElement('div')
+	columnsDiv.className = 'row row-cols-1 row-cols-md-3 g-4'
+	rowDiv.appendChild(columnsDiv)
+
+	arr.map(element => {
+		const titleH5 = document.createElement('h5')
+		titleH5.className = 'card-title'
+		titleH5.innerText = element.title
+		const p = document.createElement('p')
+		p.className = 'card-text'
+		p.innerText = element.body
+		const cardBodyDiv = document.createElement('div')
+		cardBodyDiv.className = 'card-body'
+		const authorPic = document.createElement('img')
+		authorPic.setAttribute('src', element.authorAvatar)
+		authorPic.style.width = '100px'
+		authorPic.style.borderRadius = '100%'
+		authorPic.className = 'card-footer'
+		const titleH6 = document.createElement('h6')
+		titleH6.innerText = element.authorName + ', ' + element.createdAt
+		titleH6.style.fontStyle = 'italic'
+		titleH6.style.fontSize = '14px'
+		titleH6.className = 'card-footer'
+		const views = document.createElement('p')
+		views.innerText = element.views + ' views'
+		views.style.fontSize = '10px'
+		cardBodyDiv.appendChild(titleH5)
+		cardBodyDiv.appendChild(p)
+		cardBodyDiv.appendChild(authorPic)
+		cardBodyDiv.appendChild(titleH6)
+		cardBodyDiv.appendChild(views)
+		document.body.appendChild(cardBodyDiv)
+
+		const img = document.createElement('img')
+		img.setAttribute('src', element.cover)
+		const cardDiv = document.createElement('div')
+		cardDiv.className = 'card'
+		cardDiv.appendChild(img)
+		cardDiv.appendChild(cardBodyDiv)
+		columnsDiv.appendChild(cardDiv)
+		
+		
+	})
+
+	
 }
 
-createCards(data)
+
+
+createCard(data)
