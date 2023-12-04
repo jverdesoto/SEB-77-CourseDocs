@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    font-family: helvetica;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    max-width: 60%;
+}
+
+.grid-item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.small-text {
+    font-size: 14px;
+    color: grey;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.large-text {
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.header {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 12px solid rgb(116, 187, 129);
+    padding: 10px;
+    border-radius: 50%;
+    width: 104px;
+    height: 104px;
+    margin-top: 10px;
+}
+
+.headerImage {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+}
+
+.starImage {
+    width: 80px; 
+    height: 25px; 
+}
+
+.star-rating {
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+    text-align: center;
+}
+
+.pricing {
+    background-color: white;
+    color: black;
+}
+
+.contact-icons {
+    display: flex;
+}
+
+.telephone-icon {
+    background-color: rgb(116, 187, 129);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.message-icon {
+    background-color: rgb(92, 196, 120);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
