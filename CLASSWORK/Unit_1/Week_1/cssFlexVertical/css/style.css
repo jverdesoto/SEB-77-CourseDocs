@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(43, 93, 95);
+  }
+
+  main {
+    width: 240px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  #status {
+    text-align: right;
+    padding: 10px 20px 0 0;
+    color: lightgrey;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  #profilepic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: rgb(130, 207, 144) 4px solid;
+  }
+
+  h1, p {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding: 10px 0;
+  }
+
+  #occupation {
+    background-color: rgb(243, 243, 243);
+    padding: 16px 0;
+  }
+
+  #brand {
+    display: none;
+  }
+
+  #offer {
+    padding: 18px 0;
+  }
+
+  #offer >#offertext {
+    font-size: 20px;
+  }
+
+  #contact {
+    display: flex;
+  }
+
+  #contact >p {
+    height: 60px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #contact > p:first-child {
+    background-color: rgb(130, 207, 144);
+  }
+
+  #contact > p:last-child {
+    background-color: rgb(116, 187, 128);
+  }
+
+
+  @media only screen and (min-width:700px) {
+    main {
+        display: grid;
+        text-align: left;
+        width: 550px;
+        background-color: rgb(255, 255, 255);
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "status name"
+        "img profilepic"
+        "img brand"
+        "contact offer";
+    }
+    
+    #name {
+        display: flex;
+        padding-bottom: 0px;
+        padding-top: 20px;
+    }
+    
+    #brand {
+        display: inline;
+        padding-bottom: 15px;
+    }
+    
+    #status {
+        text-align: left;
+        padding: 10px 0 0 20px;
+        color: lightgrey;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    #profilepic {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: rgb(130, 207, 144) 4px solid;
+        grid-area: img;
+        margin: 0 auto;
+      }
+    
+      #name, #occupation, #stars, #brand, #offer {
+        padding-left: 20px;
+        background-color: rgb(243, 243, 243)
+      }
+    
+      #contact {
+        grid-area: contact;
+      }
+    
+      #offer {
+        grid-area: offer;
+        font-size: 14px;
+        padding: 0px 20px;
+      }
+    
+      #contact {
+        display: flex;  
+      }
+    
+      #brand > p {
+        border-left: rgb(116, 187, 128) 4px solid;
+        padding: 0 20px;
+        color: lightgray;
+      }
+    
+      #contact >p {
+        height: 60px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      #contact > p:first-child {
+        background-color: rgb(130, 207, 144);
+      }
+    
+      #contact > p:last-child {
+        background-color: rgb(116, 187, 128);
+      }
+    
+      #offertext {
+        padding-top: 10px;
+      }
+
+      #stars {
+        padding-left: 0;
+        width: 105px;
+      }
+
+      #occupation > p {
+        font-size: 17px;
+      }
+  }
