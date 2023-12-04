@@ -121,22 +121,38 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+//need the body, image and title in the cards
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+function createCard(arr) {
+	arr.forEach(element => {
 
-myDiv.appendChild(title)
+		const card = document.createElement('div')
+		card.className = 'card'
 
-document.getElementById('app').appendChild(myDiv)
+		const image = document.createElement('img')
+		image.className = 'card-img-top'
+		image.setAttribute('src', element.cover)
 
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
+		const title = document.createElement('h3')
+		title.className = 'card-title'
+		title.innerText = element.title
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+		const p = document.createElement('p')
+		p.className = 'card-text'
+		p.innerText = element.body
+
+		const button = document.createElement('button')
+		button.className = 'btn btn-primary'
+		button.innerText = 'Read More >>'
+
+		card.appendChild(image)
+		card.appendChild(title)
+		card.appendChild(p)
+		card.appendChild(button)
+
+		document.body.appendChild(card)
+	}
+		)
 }
 
-createCards(data)
+createCard(data)
