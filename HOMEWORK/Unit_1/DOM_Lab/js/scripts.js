@@ -121,22 +121,57 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+// const title = document.createElement('img')
+// const myDiv = document.createElement('div')
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+// title.setAttribute('src', data[0].cover)
+// title.classList.add('myClass', 'myOtherClass')
 
-myDiv.appendChild(title)
+// myDiv.appendChild(title)
 
-document.getElementById('app').appendChild(myDiv)
+// document.getElementById('app').appendChild(myDiv)
 
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
+// // document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
-}
+// function createCards(arr) {
+//     arr.map((post)=>{
+//         console.log(post.cover);
+//     })
+// }
 
-createCards(data)
+// createCards(data)
+
+const container = document.querySelector('.row');
+
+const createCards = () => {
+	data.forEach(post => {
+	  const cardDiv = document.createElement('div');
+	  cardDiv.classList.add('col-sm-6', 'mb-3', 'mb-sm-0');
+  
+	  const img = document.createElement('img');
+	  img.src = post.cover;
+	  img.classList.add('card-img-top');
+	  img.alt = 'Card Image';
+  
+	  const cardBody = document.createElement('div');
+	  cardBody.classList.add('card-body');
+  
+	  const title = document.createElement('h5');
+	  title.classList.add('card-title');
+	  title.textContent = post.title;
+  
+	  const text = document.createElement('p');
+	  text.classList.add('card-text');
+	  text.textContent = post.body;
+  
+	  cardBody.appendChild(title);
+	  cardBody.appendChild(text);
+  
+	  cardDiv.appendChild(img);
+	  cardDiv.appendChild(cardBody);
+  
+	  container.appendChild(cardDiv);
+	});
+  };
+  
+  createCards();
