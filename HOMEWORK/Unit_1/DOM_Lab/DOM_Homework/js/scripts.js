@@ -121,17 +121,16 @@ const data = [
 	}
 ]
 
-const container = document.createElement("div")
+let container = document.createElement("div")
 container.classList.add("container")
 document.body.append(container)
+container.style.display = "flex"
     
-const row = document.createElement("div")
+let row = document.createElement("div")
 row.classList.add("row")
 container.appendChild(row)
 
-const columns = document.createElement("div")
-columns.className = "col-lg-4 col-md-6 col-sm-12"
-row.appendChild(columns)
+
 // row.innerHTML = "<div class="col-lg-4 col-md-6 col-sm-12">";
 // const columns = document.createElement("div")
 // columns.setAttribute("col-lg-4 col-md-6 col-sm-12")
@@ -140,33 +139,50 @@ row.appendChild(columns)
 function createCards(arr) {
     
     for (let i = 0; i < arr.length; i++) {
-    const card = document.createElement("div")
-    card.setAttribute("class", "card")
-    card.style.backgroundColor = "pink";
 
-    const title = document.createElement("div")
+	let columns = document.createElement("div")
+	columns.classList.add("col-lg-4", "col-md-6", "col-sm-12")
+
+    let card = document.createElement("div")
+    card.setAttribute("class", "card")
+    card.style.backgroundColor = "beige";
+	card.style.margin = "10px";
+	card.style.height = "440px";
+
+	let image = document.createElement("img")
+	image.classList.add("card-img-top")
+    image.setAttribute("src", arr[i].cover)
+	image.setAttribute("alt", arr[i].title)
+
+    let title = document.createElement("div")
     title.innerHTML = `<h2>${arr[i].title}</h2>`
 
-    const cardText = document.createElement("p")
+    let cardText = document.createElement("p")
     cardText.classList.add("cardtext")
     cardText.innerHTML = `<h6>${arr[i].body}</h6>`
 
-    const image = document.createElement("img")
-    image.setAttribute("src", arr[i].cover);
-
-    const authorName = document.createElement("h6")
+    let authorName = document.createElement("h6")
     authorName.innerText = `Author: ${arr[i].authorName}`
 
-    const views = document.createElement("p")
+    let views = document.createElement("p")
     views.classList.add("views")
     views.innerHTML = `views = ${arr[i].views}`
 
+	let button = document.createElement("a")
+	button.classList.add("button", "button-primary")
+	button.setAttribute("href", "#")
+	button.text = "Read More >>"
+	
+	row.appendChild(columns)
+
     columns.appendChild(card)
+	card.appendChild(image)
     card.appendChild(title)
     card.appendChild(cardText)
-    card.appendChild(image)
-    card.appendChild(views)
     card.appendChild(authorName)
+    card.appendChild(views)
+	card.appendChild(button)
+
 
     }
 }
