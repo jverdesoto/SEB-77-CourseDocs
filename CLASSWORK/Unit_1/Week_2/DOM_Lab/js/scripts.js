@@ -121,22 +121,55 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+// data[0]
 
-myDiv.appendChild(title)
+data.map((post) => {
 
-document.getElementById('app').appendChild(myDiv)
 
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
-}
+// First we create a variable for HTML element: 
+let cardTitle = document.createElement('h5')
+// The next thing is the class to add : 
 
-createCards(data)
+cardTitle.classList.add('card-title')
+cardTitle.innerHTML = post.title
+
+
+
+let cardText = document.createElement ('p')
+cardText.classList.add('card-text')
+cardText.innerHTML = post.body
+let btn = document.createElement('a')
+btn.classList.add('btn','btn-primary')
+btn.setAttribute('href','#')
+btn.text ='Read More >>'
+
+let cardBody = document.createElement('div')
+cardBody.classList.add('card-body')
+
+cardBody.appendChild(cardTitle)
+cardBody.appendChild(cardText)
+cardBody.appendChild(btn)
+
+let image = document.createElement('img')
+image.classList.add('card-img-top')
+image.setAttribute('src',post.cover)
+image.setAttribute('alt',post.title)
+
+let card = document.createElement('div')
+card.classList.add ('card')
+
+card.appendChild(image)
+card.appendChild(cardBody)
+
+let col = document.createElement('div');
+col.classList.add("col-lg-4", "col-md-6" , "col-sm-12");
+
+col.appendChild(card);
+
+
+
+// we want to add the h5 to 'content'
+document.getElementById ('content').appendChild(col);
+})
