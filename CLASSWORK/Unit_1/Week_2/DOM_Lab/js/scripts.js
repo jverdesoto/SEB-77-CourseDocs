@@ -126,29 +126,35 @@ const data = [
 function createCard(arr) {
 	arr.forEach(element => {
 
+		const cardSize = document.createElement('div')
+		cardSize.className = 'col-lg-4', 'col-md-6', 'col-sm-12'
+		
 		const card = document.createElement('div')
-		card.className = 'card'
+		card.className = 'card-body'
 
 		const image = document.createElement('img')
 		image.className = 'card-img-top'
 		image.setAttribute('src', element.cover)
+		image.setAttribute('alt', element.title)
 
 		const title = document.createElement('h3')
 		title.className = 'card-title'
 		title.innerText = element.title
 
-		const p = document.createElement('p')
-		p.className = 'card-text'
-		p.innerText = element.body
+		const cardText = document.createElement('p')
+		cardText.className = 'card-text'
+		cardText.innerText = element.body
 
-		const button = document.createElement('button')
-		button.className = 'btn btn-primary'
+		const button = document.createElement('a')
+		button.className = 'btn', 'btn-primary'
+		button.setAttribute('href', '#')
 		button.innerText = 'Read More >>'
 
 		card.appendChild(image)
 		card.appendChild(title)
-		card.appendChild(p)
+		card.appendChild(cardText)
 		card.appendChild(button)
+		card.appendChild(cardSize)
 
 		document.body.appendChild(card)
 	}

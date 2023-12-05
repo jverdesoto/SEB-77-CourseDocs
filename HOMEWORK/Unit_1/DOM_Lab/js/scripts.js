@@ -121,22 +121,42 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+function createCard(arr) {
+	arr.forEach(element => {
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+		const cardSize = document.createElement('div')
+		cardSize.className = 'col-lg-4', 'col-md-6', 'col-sm-12'
+		
+		const card = document.createElement('div')
+		card.className = 'card-body'
 
-myDiv.appendChild(title)
+		const image = document.createElement('img')
+		image.className = 'card-img-top'
+		image.setAttribute('src', element.cover)
+		image.setAttribute('alt', element.title)
 
-document.getElementById('app').appendChild(myDiv)
+		const title = document.createElement('h3')
+		title.className = 'card-title'
+		title.innerText = element.title
 
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
+		const cardText = document.createElement('p')
+		cardText.className = 'card-text'
+		cardText.innerText = element.body
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+		const button = document.createElement('a')
+		button.className = 'btn', 'btn-primary'
+		button.setAttribute('href', '#')
+		button.innerText = 'Read More >>'
+
+		card.appendChild(image)
+		card.appendChild(title)
+		card.appendChild(cardText)
+		card.appendChild(button)
+		card.appendChild(cardSize)
+
+		document.body.appendChild(card)
+	}
+		)
 }
 
-createCards(data)
+createCard(data)
