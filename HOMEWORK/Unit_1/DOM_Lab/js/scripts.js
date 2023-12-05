@@ -121,22 +121,99 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
+// Task
 
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
+function createCard(cardData) {
+    const card = document.createElement('div');
+    card.classList.add('col-md-4', 'mb-4');
 
-myDiv.appendChild(title)
+    const cardInner = document.createElement('div');
+    cardInner.classList.add('card');
 
-document.getElementById('app').appendChild(myDiv)
+    const cardImage = document.createElement('img');
+    cardImage.src = cardData.cover;
+    cardImage.alt = 'Card Image';
+    cardImage.classList.add('card-img-top');
 
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
 
-function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+    const cardTitle = document.createElement('h5');
+    cardTitle.classList.add('card-title');
+    cardTitle.textContent = cardData.title;
+
+    const cardText = document.createElement('p');
+    cardText.classList.add('card-text');
+    cardText.textContent = cardData.body;
+
+    const cardFooter = document.createElement('div');
+    cardFooter.classList.add('card-footer');
+
+    const cardViews = document.createElement('small');
+    cardViews.classList.add('text-muted');
+    cardViews.textContent = `Views: ${cardData.views}`;
+
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardText);
+    cardFooter.appendChild(cardViews);
+    cardInner.appendChild(cardImage);
+    cardInner.appendChild(cardBody);
+    cardInner.appendChild(cardFooter);
+
+    card.appendChild(cardInner);
+    return card;
+  }
+  function renderCards(data) {
+    const cardContainer = document.getElementById('cardContainer');
+
+    data.forEach(cardData => {
+      const card = createCard(cardData);
+      cardContainer.appendChild(card);
+    });
 }
+  renderCards(data);
 
-createCards(data)
+
+// data [0]
+// Javi's answer
+
+// data.map(post =>  {
+// let cardTitle = document.createElement("h5");
+// cardTitle.classList.add("card-title");
+// cardTitle.innerHTML = post.title
+
+// let cardText = document.createElement("p");
+// cardText.classList.ass("card-text");
+// cardText.innerHTML = post.body
+
+// let btn = document.createElement("A");
+// btn.classList.add("btn", "btn-primary");
+// btn.setAttribute("href", "#");
+// btn.text = "Read More >>"
+
+// let cardBody = document.createElement("div");
+// cardBody.classList.add("card-body");
+
+// cardBody.appendChild(cardTitle);
+// cardBody.appendChild(cardText);
+// cardBody.appendChild(btn);
+
+// let image = document.createElement("img");
+// image.classList.add("card-img-top");
+// image.setAttribute("src", post.cover);
+// image.setAttribute("alt", post.title);
+
+// let card = document.createElement("div");
+// card.classList.add("card");
+
+// card.appendChild(image);
+// card.appendChild(cardBody);
+
+// let col = document.createElement("div");
+// col.classList.add("col-lg-4", "col-md-6", "col-sm-12");
+
+// col.appendChild(card);
+
+// document.getElementById("content").appendChild(col);
+
+// })
