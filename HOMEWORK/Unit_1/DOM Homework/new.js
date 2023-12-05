@@ -139,53 +139,41 @@ const data = [
 // }
 
 
-function createCards(data){
-
-	const container = document.createElement('div')
-	container.classList.add("container")
-	
-	const row = document.createElement('div')
-	row.classList.add("row")
-	
-	const mediaQuerys = document.createElement('div')
-	mediaQuerys.classList.add("row row-cols-1 row-cols-md-3 g-4")
-
-	const cardDiv = document.createElement("div") 
-	cardDiv.classList.add("card")
+data.map((post) => {
 
 
-	
-	container.appendChild(row)
-	row.appendChild(mediaQuerys)
-	mediaQuerys.appendChild(cardDiv)
-    
-
-	for (let i = 0; i<data.length; i++) {
-		const cardBody = document.createElement("div")
+		let cardBody = document.createElement("div")
 		cardBody.classList.add("card-body")
 
-		const p = document.createElement("p")
-		p.innerText = data[i].body
+		let p = document.createElement("p")
+		p.innerText = post.body
 		p.classList.add("card-text")
 		
-		const cardTitle = document.createElement("h5")
+		let cardTitle = document.createElement("h5")
 		cardTitle.classList.add("card-title")
-		title.innerHTML = `<h1>${data[i].title}</h1>`
+		cardTitle.innerHTML = post.title
 
-		const image = document.createElement("img")	
-		image.setAttribute("src", data[i].cover)
-		
+		let image = document.createElement("img")
+		image.classList.add("card-img-top")	
+		image.setAttribute("src", post.cover)
+		image.setAttribute("alt", post.title)
+
+		let mediaQuerys = document.createElement('div')
+		mediaQuerys.classList.add("col-log-4", "col-md-6", "col-sm-12")
+
+		let cardDiv = document.createElement("div") 
+		cardDiv.classList.add("card")
 
 		cardBody.appendChild(cardTitle)
 		cardBody.appendChild(p)
-		cardDiv.appendChild(cardBody)
-		row.appendChild(cardDiv)
 		cardDiv.appendChild(image)
-	    document.body.appendChild(container)
+		cardDiv.appendChild(cardBody)
+		
+		mediaQuerys.appendChild(cardDiv)
 
-	}
+		document.getElementById("content").appendChild(mediaQuerys)
+	
+		
 
+})
 
-	createCard(data)
-
-}
