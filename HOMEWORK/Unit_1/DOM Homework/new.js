@@ -120,3 +120,72 @@ const data = [
         authorName: "Sarah Davis"
 	}
 ]
+// const title = document.createElement('img')
+// const myDiv = document.createElement('div')
+
+// title.setAttribute('src', data[0].cover)
+// title.classList.add('myClass', 'myOtherClass')
+
+// myDiv.appendChild(title)
+
+// document.getElementById('app').appendChild(myDiv)
+
+// // document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
+
+// function createCards(arr) {
+//     arr.map((post)=>{
+//         console.log(post.cover);
+//     })
+// }
+
+
+function createCards(data){
+
+	const container = document.createElement('div')
+	container.classList.add("container")
+	
+	const row = document.createElement('div')
+	row.classList.add("row")
+	
+	const mediaQuerys = document.createElement('div')
+	mediaQuerys.classList.add("row row-cols-1 row-cols-md-3 g-4")
+
+	const cardDiv = document.createElement("div") 
+	cardDiv.classList.add("card")
+
+
+	
+	container.appendChild(row)
+	row.appendChild(mediaQuerys)
+	mediaQuerys.appendChild(cardDiv)
+    
+
+	for (let i = 0; i<data.length; i++) {
+		const cardBody = document.createElement("div")
+		cardBody.classList.add("card-body")
+
+		const p = document.createElement("p")
+		p.innerText = data[i].body
+		p.classList.add("card-text")
+		
+		const cardTitle = document.createElement("h5")
+		cardTitle.classList.add("card-title")
+		title.innerHTML = `<h1>${data[i].title}</h1>`
+
+		const image = document.createElement("img")	
+		image.setAttribute("src", data[i].cover)
+		
+
+		cardBody.appendChild(cardTitle)
+		cardBody.appendChild(p)
+		cardDiv.appendChild(cardBody)
+		row.appendChild(cardDiv)
+		cardDiv.appendChild(image)
+	    document.body.appendChild(container)
+
+	}
+
+
+	createCard(data)
+
+}
