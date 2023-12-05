@@ -1,35 +1,84 @@
-const data = [
-    {
-        name: 'Rick',
-        location: '<strong>London</strong>'
-    },
-    {
-        name: 'Andy',
-        location: 'Quito'
+const btnDisplay = document.querySelector('#screen');
+const btnInput = document.querySelector('.container__buttons');
+
+let currentNum = '';
+let firstNum = '';
+let currentOperation = '';
+
+function updateDisplay() {
+    btnDisplay.textContent = currentNum || '0.';
+}
+
+ btnInput.addEventListener('click', function (input) {
+     const clickedBtn = input.target;
+     if (clickedBtn.classList.contains('button__number')) {
+         handleNumberClick(clickedBtn.textContent);
+     } else if (clickedBtn.classList.contains('button__operation')) {
+         handleMathClick(clickedBtn.textContent);
+     } else if (clickedBtn.id === 'equals') {
+         handleEqualsClick();
+     } else if (clickedBtn.id === 'clear') {
+         handleClearClick();
+     }
+ });
+
+ function handleNumberClick(number) {
+     currentNum += number;
+     updateDisplay();
+}
+    
+function handleMathClick(operation) {
+     if (currentNum !== '') {
+        if (firstNum !== '') {
+         performCalc();
+        } else {
+            firstNum = currentNum;
+        }
+         currentNum = '';
+         currentOperation = operation;
+      }
+      
     }
-]
 
-document.getElementById('primary').addEventListener('click', () => {
-    document.getElementById('secondary').innerHTML = 'You betrayed me'
+function performCalc() {
+    if (firstNum !== '' && currentNum !== '') {
+    let num1 = parseFloat(firstNum);
+    let num2 = parseFloat(currentNum);
 
-    const el = document.createElement('div')
-    el.classList.add('card')
+    const math = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => {
+                if (num2 === 0) {
+                    alert('Error: Division by zero');
+                    return;
+                } else {
+                    return a / b;
+                }
+            },
+            'root': (a) => Math.sqrt(a),
+            'square': (a) => a * a,
+        };
+        
+    const symbolFunction = math[currentOperation];
+        if (symbolFunction) {
+            let result = symbolFunction(num1, num2).toString();
+            currentNum = result;
+            firstNum = '';
+            currentOperation = '';
+            updateDisplay();
+        }
+    }
+}
 
-    const cardBody = document.createElement('div')
-    cardBody.classList.add('card-body')
+function handleEqualsClick(){
+    performCalc();
+}
 
-    const cardTitle = document.createElement('h5')
-    cardTitle.classList.add('card-title')
-    cardTitle.innerHTML = data[0].name
-
-    const cardText = document.createElement('p')
-    cardText.classList.add('card-text')
-    cardText.innerHTML = data[0].location
-
-    cardBody.appendChild(cardTitle)
-    cardBody.appendChild(cardText)
-
-    el.appendChild(cardBody)
-
-    document.getElementById('here').appendChild(el)
-})
+function handleClearClick() {
+    currentNum = '';
+    firstNum = '';
+    currentOperation = '';
+    updateDisplay();
+}
