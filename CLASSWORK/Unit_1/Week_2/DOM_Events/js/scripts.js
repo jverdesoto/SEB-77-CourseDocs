@@ -85,6 +85,9 @@ function handleSingleOperation(operation) {
 }
 
 function handleMultipleOperation(operation) {
+    if (Object.keys(firstEntry).length > 0) {
+        handleEquals();
+    }
     firstEntry.value = screen.innerText;
     firstEntry.operation = operation;
     handleClear();
