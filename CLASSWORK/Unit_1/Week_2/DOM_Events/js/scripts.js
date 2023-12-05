@@ -10,8 +10,9 @@
 
 // Select the button
 
-const btnNumbers = document.querySelectorAll(".button", ".[button__number]")
-const btnOperation = document.querySelectorAll(".button", ".[button__operation]")
+
+const btnNumbers = document.querySelectorAll(".button__number")
+const btnOperation = document.querySelectorAll(".button__operation")
 const btnClear = document.querySelector("#clear")
 const btnEquals = document.querySelector("#equals")
 const btnSquare = document.querySelector("#square")
@@ -22,81 +23,89 @@ const btnDivide = document.querySelector("#divide")
 const displayedNumber = document.querySelector("#screen")
 const btnAdd = document.querySelector("#add")
 
-class Calculate {
-    constructor(displayedNumber) {
-        this.displayedNumber = displayedNumber
-        this.screenClear()
-    } 
-    screenClear() {
-        this.display = ""
+let value1
+let value2
+let result = 0
+    function screenClear() {
+        display = ""
     }
-    appendNumber(number) { 
-        this.display = this.display + number
+    function appendNumber(number) { 
+        display = displayedNumber.innerHTML 
+        display = display + number
     }
-    calculate(){
+    function calculate(){
     }
-    compute(){
+    function showResult(){
     }
-    updateDisplay(number){
-        this.displayedNumber.innerHTML = this.display
+    function updateDisplay(number){
+        displayedNumber.innerHTML = display
     }
-    add(num1, num2) {
-        num1 = parseFloat(num1);
-        num2 = parseFloat(num2);
-        result = num1 + num2;
+    function chooseOperation(operation) {
+        display= operation
+    }
+
+
+    function add(value1, value2) {
+        value1 = parseFloat(value1);
+        value2 = parseFloat(value2);
+        result = value1 + value2;
       }
-    subtract(num1, num2) {
-        num1 = parseFloat(num1);
-        num2 = parseFloat(num2);
-        result = num1 - num2;
+
+    function subtract(value1, value2) {
+        value1 = parseFloat(value1);
+        value2 = parseFloat(value2);
+        result = value1 - value2;
       }
-    multiply(num1, num2) {
-        num1 = parseFloat(num1);
-        num2 = parseFloat(num2);
-        result = num1 * num2;
+    function multiply(value1, value2) {
+        value1 = parseFloat(value1);
+        value2 = parseFloat(value2);
+        result = value1 * value2;
       }
-    divide(num1, num2) {
-        if (num2 != 0) {
-          num1 = parseFloat(num1);
-          num2 = parseFloat(num2);
-          result = num1 / num2;
+    function divide(value1, value2) {
+        if (value2 != 0) {
+          value1 = parseFloat(value1);
+          value2 = parseFloat(value2);
+          result = value1 / 2;
         } else {
           result = 'ERROR';
         }
       }
-    my_square(num1) {
-        num1 = parseFloat(num1);
-        result = Math.pow(num1, 2);
+    function my_square(value1) {
+        value1 = parseFloat(value1);
+        result = Math.pow(value1, 2);
       }
-    my_root(num1) {
-        num1 = parseFloat(num1);
-        result = Math.sqrt(num1);
+    function my_root(value1) {
+        value1 = parseFloat(value1);
+        result = Math.sqrt(value1);
       }
-}
+
 
 // Attach event listener to our button
 // this.operation = undefined
-const calculator = new Calculate(displayedNumber)
 
     btnNumbers.forEach(key => {
         key.addEventListener("click", () => {
-        calculator.appendNumber(key.innerHTML)
-        calculator.updateDisplay()
+        appendNumber(key.innerHTML)
+        updateDisplay()
         })
     })
     btnClear.addEventListener("click", button => {
-        calculator.screenClear()
-        calculator.updateDisplay()
+        screenClear()
+        updateDisplay()
     })
     btnOperation.forEach(key => {
         key.addEventListener("click", () => {
-        calculator.updateDisplay()
+        // document.getElementById('screen').innerHTML = value1
+        chooseOperation(key.innerHTML)
+        updateDisplay()
         })
     })
-
-
-
-
+    btnEquals.addEventListener("click", button => {
+        // document.getElementById('screen').innerHTML = value2
+        screenClear()
+        updateDisplay()
+        showResult()
+    })
 
 
 

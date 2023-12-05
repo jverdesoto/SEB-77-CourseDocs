@@ -141,7 +141,6 @@ const data = [
 
 data.map((post) => {
 
-
 		let cardBody = document.createElement("div")
 		cardBody.classList.add("card-body")
 
@@ -172,8 +171,7 @@ data.map((post) => {
 		mediaQuerys.appendChild(cardDiv)
 
 		document.getElementById("content").appendChild(mediaQuerys)
-	
-		
 
 })
+
 
