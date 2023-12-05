@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Cards</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="cardContainer">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Link Bootstrap JS (Optional if needed for other functionalities) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Your JavaScript code
+        const data = [
+            // Your data array
+        ];
+
+        function createCard(post) {
+            const cardContainer = document.getElementById('cardContainer');
+
+            const col = document.createElement('div');
+            col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12');
+
+            const card = document.createElement('div');
+            card.classList.add('card', 'mb-3');
+
+            const img = document.createElement('img');
+            img.src = post.cover;
+            img.classList.add('card-img-top');
+            img.alt = '...';
+
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const title = document.createElement('h5');
+            title.classList.add('card-title');
+            title.textContent = post.title;
+
+            const text = document.createElement('p');
+            text.classList.add('card-text');
+            text.textContent = post.body;
+
+            const link = document.createElement('a');
+            link.href = '#';
+            link.classList.add('btn', 'btn-primary');
+            link.textContent = 'Read more >>';
+
+            cardBody.appendChild(title);
+            cardBody.appendChild(text);
+            cardBody.appendChild(link);
+
+            card.appendChild(img);
+            card.appendChild(cardBody);
+
+            col.appendChild(card);
+            cardContainer.appendChild(col);
+        }
+
+        function createCards(arr) {
+            arr.forEach(post => {
+                createCard(post);
+            });
+        }
+
+        // Call the function to generate cards
+        createCards(data);
+    </script>
+</body>
+</html>
