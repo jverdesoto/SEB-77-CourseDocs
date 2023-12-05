@@ -123,7 +123,10 @@ const data = [
 
 
 function createCards(arr) {
-	arr.map(article => {		
+	arr.map(article => {
+		const col = document.createElement('div');
+		col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12')
+		
 		const card = document.createElement('div');
 		card.classList.add('card')
 		
@@ -152,7 +155,9 @@ function createCards(arr) {
 		card.appendChild(cardImage);
 		card.appendChild(cardBody);
 
-		document.querySelector('.row').appendChild(card);
+		col.appendChild(card);
+
+		document.querySelector('.row').appendChild(col);
 
 
 	})
