@@ -139,62 +139,62 @@ const data = [
 		console.log(post.cover);
 	})
 }
- function createCards(arr) {
-	const cardContainer = document.getElementById('app');
-  
-	arr.forEach((post) => {
-		// Creating the card container
-		const container = document.createElement('div');
-		container.classList.add('container');
-	
-		// Creating the row
-		const row = document.createElement('div');
-		row.classList.add('row');
-	
-		// Creating the column
-		const col = document.createElement('div');
-		col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12');
-	
-		// Creating the card
-		const card = document.createElement('div');
-		card.classList.add('card');
-	
-		// Creating the card image
-		const cardImg = document.createElement('img');
-		cardImg.setAttribute('src', post.cover);
-		cardImg.classList.add('card-img-top');
-	
-		// Creating the card body
-		const cardBody = document.createElement('div');
-		cardBody.classList.add('card-body');
-	
-		// Creating the card title
-		const cardTitle = document.createElement('h5');
-		cardTitle.classList.add('card-title');
-		cardTitle.textContent = post.title;
-	
-		// Creating the card text
-		const cardText = document.createElement('p');
-		cardText.classList.add('card-text');
-		cardText.textContent = post.body;
-	
-		// Creating the card link
-		const cardLink = document.createElement('a');
-		cardLink.setAttribute('href', '#');  // Fix the order of attributes
-		cardLink.classList.add('btn', 'btn-primary');
-		cardLink.textContent = 'Read more';
-	
-		// Appending elements ///
-		cardContainer.appendChild(container);
-		container.appendChild(row);
-		row.appendChild(col);
-		col.appendChild(card);
-		card.appendChild(cardImg);
-		card.appendChild(cardBody);
-		cardBody.appendChild(cardTitle);
-		cardBody.appendChild(cardText);
-		cardBody.appendChild(cardLink);
-	  });
-	}
-	
+function createCards(arr) {
+    const cardContainer = document.getElementById('app');
+
+    // Create the container outside the loop
+    const container = document.createElement('div');
+    container.classList.add('container');
+    cardContainer.appendChild(container);
+
+    arr.map((post) => {
+        // Creating the row
+        const row = document.createElement('div');
+        row.classList.add('row');
+
+        // Creating the column
+        const col = document.createElement('div');
+        col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12');
+
+        // Creating the card
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Creating the card image
+        const cardImg = document.createElement('img');
+        cardImg.classList.add('card-img-top');
+        cardImg.setAttribute('src', post.cover);
+
+        // Creating the card body
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+
+        // Creating the card title
+        const cardTitle = document.createElement('h5');
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = post.title;
+
+        // Creating the card text
+        const cardText = document.createElement('p');
+        cardText.classList.add('card-text');
+        cardText.textContent = post.body;
+
+        // Creating the card link
+        const cardLink = document.createElement('a');
+        cardLink.classList.add('btn', 'btn-primary');
+        cardLink.setAttribute('href', '#');
+        cardLink.textContent = 'Read more >>';
+
+        // Appending elements ///
+        container.appendChild(row);
+        row.appendChild(col);
+        col.appendChild(card);
+        card.appendChild(cardImg);
+        card.appendChild(cardBody);
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(cardLink);
+    });
+}
+
 	createCards(data);
