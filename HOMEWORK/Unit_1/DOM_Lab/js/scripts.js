@@ -144,6 +144,8 @@ const data = [
 // }
 // createCard(data)
 
+// This code above is my homework, the below code is the code I followed along with when you explained it.
+
 //data[0]
 
 data.map(post => {
