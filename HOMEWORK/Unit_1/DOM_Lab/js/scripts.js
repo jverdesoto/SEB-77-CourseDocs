@@ -121,22 +121,98 @@ const data = [
 	}
 ]
 
-const title = document.createElement('img')
-const myDiv = document.createElement('div')
-
-title.setAttribute('src', data[0].cover)
-title.classList.add('myClass', 'myOtherClass')
-
-myDiv.appendChild(title)
-
-document.getElementById('app').appendChild(myDiv)
-
-// document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
 function createCards(arr) {
-    arr.map((post)=>{
-        console.log(post.cover);
-    })
+	arr.map(article => {		
+		const card = document.createElement('div');
+		card.classList.add('card')
+		
+		const cardImage = document.createElement('img');
+		cardImage.classList.add('card-img-top');
+		
+		const cardBody = document.createElement('div');
+		cardBody.classList.add('card-body');
+		
+		const cardTitle = document.createElement('h5');
+		cardTitle.classList.add('card-title');
+		
+		const cardText = document.createElement('p');
+		cardText.classList.add('card-text');
+		
+		const cardButton = document.createElement('a');
+		cardButton.classList.add('btn', 'btn-primary')
+		cardButton.innerText = 'Read More'
+		cardImage.setAttribute('src', article.cover);
+		cardTitle.innerText = article.title;
+		cardText.innerText = article.body;
+		cardBody.appendChild(cardTitle);
+		cardBody.appendChild(cardText);
+		cardBody.appendChild(cardButton);
+
+		card.appendChild(cardImage);
+		card.appendChild(cardBody);
+
+		document.querySelector('.row').appendChild(card);
+
+
+	})
 }
 
-createCards(data)
+function createCardsV2(arr) {
+	arr.map(article => {		
+		const card = document.createElement('div');
+		card.classList.add('col-lg-4', 'col-md-6', 'col-sm-12')
+
+		card.innerHTML = `
+		<div class="card">
+			<img class="card-img-top" />
+			<div class="card-author">
+				<img class="card-author-image" />
+				<h6 class="card-author-name"></h6>
+			</div>
+			<div class="card-body">
+		  	<h5 class="card-title"></h5>
+		  	<p class="card-text"></p>
+		  	<p><span class="badge bg-secondary"></span></p>
+		  	<a href="#" class="btn btn-primary">Read More</a>
+			</div>
+		</div>
+		`
+		
+		const cardImage = card.querySelector('.card-img-top');
+		const cardAuthorImage = card.querySelector('.card-author-image');
+		const cardAuthorName = card.querySelector('.card-author-name');
+		const cardTitle = card.querySelector('.card-title');
+		const cardText = card.querySelector('.card-text');
+		const cardView = card.querySelector('.badge');
+
+		cardImage.setAttribute('src', article.cover);
+		cardAuthorImage.setAttribute('src', article.authorAvatar);
+		cardAuthorName.innerText = article.authorName;
+		cardTitle.innerText = article.title;
+		cardText.innerText = article.body;
+		cardView.innerText = article.views + " views";
+
+		document.querySelector('.row').appendChild(card);
+	})
+}
+
+// Additionally this could be done using a template literal 
+// such as below - didn't use this as wanted practice setting inner Text & attributes etc. manually
+//`
+// 		<div class="card">
+// 			<img sr=${article.cover} class="card-img-top" />
+// 			<div class="card-author">
+// 				<img src=${article.authorAvatar} class="card-author-image" />
+// 				<h6 class="card-author-name">${article.authorName}</h6>
+// 			</div>
+// 			<div class="card-body">
+// 		  	<h5 class="card-title">${article.title}</h5>
+// 		  	<p class="card-text">${article.body}</p>
+// 		  	<p><span class="badge bg-secondary">${article.views} views</span></p>
+// 		  	<a href="#" class="btn btn-primary">Read More</a>
+// 			</div>
+// 		</div>
+// 		`
+
+createCardsV2(data);
