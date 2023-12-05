@@ -133,6 +133,7 @@ const data = [
   
   document.getElementById('app').innerHTML = `<h1>${data[0].title}</h1>`
 
+  //// not sure if to leave this 
  function createCards(arr) {
 	arr.map((post)=>{
 		console.log(post.cover);
@@ -183,7 +184,7 @@ const data = [
 		cardLink.classList.add('btn', 'btn-primary');
 		cardLink.textContent = 'Read more';
 	
-		// Appending elements
+		// Appending elements ///
 		cardContainer.appendChild(container);
 		container.appendChild(row);
 		row.appendChild(col);
