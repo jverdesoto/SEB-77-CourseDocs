@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+  body {
+    margin: 0;
+    font-family: Helvetica;
+    background: rgb(0,97,98);
+  }
+  .vertical {
+    background-color: white;
+    width: 350px;
+    height: 550px;
+    margin: 150px 0px 0px 150px;
+    text-align: center;
+    display: grid;
+  }
+  .status {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+  }
+  .firstSection{
+    grid-area: fs;
+  }
+  .profilePhoto {
+    border-radius: 100%;
+    border: 5px solid lightgreen;
+  }
+  .secondSection {
+    background-color: lightgrey;
+    grid-area: ss;
+  }
+  .stars {
+    margin: 10px;
+  }
+  h2 {
+    margin: 0px;
+  }
+  .thirdSection {
+    grid-area: ts;
+  }
+  .phone {
+    margin-top: 100px;
+    grid-area: phone;
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .horizontal {
+    background-color: white;
+    width: 350px;
+    height: 550px;
+    display: grid;
+    margin: 100px 0px 0px 100px;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;  */
+  /* } grid-template-areas: 
+    " . . . ."
+    " . main main smt "
+    " . . . ."; */
