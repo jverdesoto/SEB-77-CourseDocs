@@ -137,9 +137,13 @@ const data = [
 
 function createCards(arr) {
     arr.map((post)=>{
-        let app = document.getElementById("app");
+		let app = document.getElementById("app");
+		let holder = document.createElement("div");
+		app.appendChild(holder);
+		holder.classList.add("col-lg-4", "col-md-6", "col-sm-12");
+
 		let firstDiv = document.createElement("div");
-		app.appendChild(firstDiv);
+		holder.appendChild(firstDiv);
 		firstDiv.className = "card";
 		firstDiv.style.width = "18rem";
 		
@@ -165,10 +169,10 @@ function createCards(arr) {
 
 		let firstA = document.createElement("a");
 		secondDiv.appendChild(firstA);
-		firstA.className = "btn btn-primary";
+		firstA.classList.add ("btn","btn-primary");
 		firstA.setAttribute("href", post.authorAvatar);
 		firstA.setAttribute("target", "_blank")
-		firstA.innerText = `Click Here to see ${post.authorName}`
+		firstA.innerText = `Click Here to see ${post.authorName}`;
 	
     });
 }
