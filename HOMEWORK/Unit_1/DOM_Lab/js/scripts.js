@@ -121,25 +121,68 @@ const data = [
 	}
 ]
 
-const app = document.getElementById('app')
-const card = document.getElementsByClassName('card')[0]
-function createCard(arr) {
-	for (let i = 0; i < arr.length; i++) {
-		const container = document.createElement('div')
-		container.classList.add('container')
-		const image = document.createElement('img')
-		image.setAttribute('src', arr[i].cover)
-		const title = document.createElement('div')
-		title.innerHTML = `<h4>${arr[i].title}</h4>`
-		const body = document.createElement('div')
-		body.innerText = arr[i].body
+// const app = document.getElementById('app')
+// const card = document.getElementsByClassName('card')[0]
+// function createCard(arr) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const container = document.createElement('div')
+// 		container.classList.add('container')
+// 		const image = document.createElement('img')
+// 		image.setAttribute('src', arr[i].cover)
+// 		const title = document.createElement('div')
+// 		title.innerHTML = `<h4>${arr[i].title}</h4>`
+// 		const body = document.createElement('div')
+// 		body.innerText = arr[i].body
 		
 		
-		container.appendChild(image)
-		container.appendChild(title)
-		container.appendChild(body)
-		card.appendChild(container)
-	}
+// 		container.appendChild(image)
+// 		container.appendChild(title)
+// 		container.appendChild(body)
+// 		card.appendChild(container)
+// 	}
 	
-}
-createCard(data)
+// }
+// createCard(data)
+
+//data[0]
+
+data.map(post => {
+	let cardTitle = document.createElement('h5')
+	cardTitle.classList.add('card-title')
+	cardTitle.innerHTML = post.title
+
+	let cardText = document.createElement('p')
+	cardText.classList.add('card-text')
+	cardText.innerHTML = post.body
+
+	let btn = document.createElement('a')
+	btn.classList.add('btn', 'btn-primary')
+	btn.setAttribute('href', '#')
+	btn.text = 'Read More >>'
+
+	let cardBody = document.createElement('div')
+	cardBody.classList.add('card-body')
+
+	cardBody.appendChild(cardTitle)
+	cardBody.appendChild(cardText)
+	cardBody.appendChild(btn)
+
+	let image = document.createElement('img')
+	image.classList.add('card-img-top')
+	image.setAttribute('src', post.cover)
+	image.setAttribute('alt', post.title)
+
+	let card = document.createElement('div')
+	card.classList.add('card')
+
+	card.appendChild(image)
+	card.appendChild(cardBody)
+
+	let col = document.createElement('div')
+	col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12')
+
+	col.appendChild(card)
+
+	document.getElementById('content').appendChild(col)
+})
+
