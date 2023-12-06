@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;   /*wholescreen */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 4vmin;
+    color: darkgrey;
+    letter-spacing: 1vmin;
+}
+
+h1 {
+    color: gray;
+    font-size: 3vmin;
+}
+
+#markers {
+    display: grid;
+    gap: 1vmin;
+    grid-template-columns: repeat(7,10vmin);
+    margin-top: 1.5vmin;
+}
+#markers > div {
+    border-color: lightgrey transparent transparent; /*top left-right bottom */
+    border-style: solid;
+    border-width: 5vmin;
+    height: 10vmin;
+    /* transform: scale(0.7); */
+    scale: 0.7;
+}
+#markers > div:hover {
+    border-top-color: darkgrey;
+    scale: 0.9;
+    /* transform: scale(0.9); */
+    transition: scale 150ms ease-in;   /* transition is bettter in actual element */
+}
+#board {
+    display: grid;
+    gap: 1vmin;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    margin-top: -4vmin;
+}
+#board > div {
+    border: 0.1vmin solid gray;
+    border-radius: 50%;
+}
+button {
+    border: 0.1vmin solid gray;
+    border-radius: 4vmin ;
+    cursor: pointer;
+    color: gray;
+    font-size: 2vmin;
+    margin-top: 4vmin;
+    padding: 2vmin
+}
+button:hover {
+    color: white;
+    background-color: darkgrey;
+
+}
