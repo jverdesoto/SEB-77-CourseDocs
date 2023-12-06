@@ -159,15 +159,20 @@ const data = [
 
 // getCardWithId(1);
 
+
+// 
+// 
 const row = document.querySelector(".row");
 
 function createCard(data) {
   const col = document.createElement("div");
-  col.classList.add("col-lg-4", "col-md-3", "col-sm-12");
+  col.classList.add("col-lg-4", "col-md-6", "col-sm-12");
   const card = document.createElement("div");
   card.classList.add("card");
+  card.style.margin = '20px'
   const img = document.createElement("img");
   img.setAttribute("src", data.cover);
+  img.setAttribute('alt', data.title)
   img.classList.add("card-img-top");
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
@@ -179,7 +184,8 @@ function createCard(data) {
   cardText.innerHTML = data.body;
   const btn = document.createElement("a");
   btn.classList.add("btn", "btn-primary");
-  btn.innerText = "Go somewhere";
+  btn.setAttribute('href', '#')
+  btn.innerText = "Read More >>>";
 
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardText);
@@ -194,10 +200,12 @@ function createCard(data) {
 }
 
 data.forEach(createCard);
+// 
+// 
 
 // data.forEach((data) => {
 //   const col = document.createElement("div");
-//   col.classList.add("col-lg-4", "col-md-3", "col-sm-12");
+//   col.classList.add("col-lg-4", "col-md-6", "col-sm-12");
 //   const card = document.createElement("div");
 //   card.classList.add("card");
 //   const img = document.createElement("img");
@@ -226,3 +234,48 @@ data.forEach(createCard);
 
 //   row.appendChild(col);
 // });
+
+
+// javi's code
+
+// data[0]
+
+// const row2 = document.querySelector('.row')
+
+// let cardTitle = document.createElement('h5')
+// cardTitle.classList.add('card-title')
+// cardTitle.innerHTML = data[0].title
+
+// let cardText = document.createElement('p')
+// cardText.classList.add('card-text')
+// cardText.innerHTML = data[0].body
+
+// let btn = document.createElement('a')
+// btn.classList.add('btn', 'btn-primary')
+// btn.setAttribute('href', '#')
+// btn.innerText = 'Read more >>>'
+
+// let cardBody = document.createElement('div')
+// cardBody.classList.add('card-body')
+
+// cardBody.appendChild(cardTitle)
+// cardBody.appendChild(cardText)
+// cardBody.appendChild(btn)
+
+// let img = document.createElement('img')
+// img.setAttribute('src', data[0].cover)
+// img.setAttribute('alt', data[0].title)
+// img.classList('card-img-top')
+
+// let card = document.createElement('div')
+// card.classList.add('card')
+
+// card.appendChild(img)
+// card.appendChild(cardBody)
+
+// let col = document.createElement('div')
+// col.classList.add('col-lg-4', 'col-md-6', 'col-sm-12')
+
+// col.appendChild(card);
+
+// row.appendChild(col)
