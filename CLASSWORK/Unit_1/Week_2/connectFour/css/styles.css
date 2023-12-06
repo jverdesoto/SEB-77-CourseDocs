@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(28, 27, 41);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* vh is viewport height, vw is viewport width, vmin -> smallest between vh and vw */
+
+header {
+    font-size: 4vmin;
+    color: rgb(218, 213, 213);
+    letter-spacing: 1vmin;
+}
+
+h1 {
+    color: white;
+    font-size: 3vmin;
+}
+
+#markers {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    gap: 1vmin;
+    margin-top: 1.5vmin;
+    cursor: pointer;
+}
+
+#markers > div {
+    border-color: lightgray transparent transparent;
+    border-style: solid;
+    border-width: 5vmin;
+    height: 10vmin;
+    /* transform: scale(0.7); */
+    scale: 0.7;
+    transition: scale 100ms ease-in;
+}
+
+#markers > div:hover {
+    border-top-color: darkgray;
+    scale: 0.9;
+    
+}
+
+#board {
+    display: grid;
+    gap: 1vmin;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    margin-top: -3vmin;
+}
+
+#board > div {
+    border: 0.1vmin solid gray;
+    border-radius: 100%;
+}
+
+button {
+    border: 0.1vmin solid gray;
+    border-radius: 4vmin;
+    color: gray;
+    font-size: 2vmin;
+    margin-top: 4vmin;
+    padding: 1vmin;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background-color: darkgray;
+    color: white;
+}
+
