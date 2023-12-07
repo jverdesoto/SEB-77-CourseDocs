@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    font-size: 10vmin;
+    letter-spacing: 2vmin;
+}
+
+h1 {
+    color: purple;
+    font-size: 8vmin;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 20vmin);
+    grid-template-rows: repeat(3, 20vmin);
+    border: none;
+}
+
+#board > div {
+    border: 2px solid gray;
+    font-size: 15vmin;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    cursor: pointer;
+    color: black;
+}
+
+#tic {
+    color: red;
+}
+
+#tac {
+    color: blue;
+}
+
+#toe {
+    color: teal;
+}
+
+button {
+    margin-top: 2vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.1vmin solid darkgray;
+    color: Green;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    color: white;
+    background-color: darkgray;
+
+}
+
+.letterX {
+    color: blue; 
+}
+  
+ 
+.letterO {
+    color: red; 
+}
+
+@keyframes explode {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+.firework {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f00; 
+    animation: explode 1s ease-out forwards;
+  }
