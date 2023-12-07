@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+/* vh is viewport height, vw is vieweport width, vmin -> smallest between vh and vw */
+header {
+    color: darkgray;
+    font-size: 4vmin;
+    letter-spacing: 1vmin;
+}
+
+h1 {
+    color: gray;
+    font-size: 3vmin;
+}
+
+#markers {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    gap: 1vmin;
+    margin-top: 1.5vmin;
+}
+
+#markers > div {
+    height: 10vmin;
+    border-color: lightgray transparent transparent;
+    border-style: solid;
+    border-width: 5vmin;
+    scale: 0.7;
+    cursor: pointer;
+    transition: scale 150ms ease-in;
+}
+
+#markers > div:hover {
+    border-top-color: darkgray;
+    scale: 0.9;
+}
+
+#board {
+    display: grid;
+    gap: 1vmin;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    margin-top: -4vmin;
+}
+
+#board > div {
+    border-radius: 50%;
+    border: 0.1vmin solid gray;
+}
+
+button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 4vmin;
+    border: 0.1vmin solid gray;
+    color: gray;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    color: white;
+    background-color: darkgray;
+
+}
+
