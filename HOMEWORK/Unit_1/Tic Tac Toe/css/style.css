@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: "Permanent Marker", cursive;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    /* viewport height - using height of window to determine a percentage
+    body will be 100% of window height
+    will never have a scroll bar*/
+}
+
+header {
+    color: orange;
+    font-size: 4vmin;
+    letter-spacing: 1vmin;
+    /* viewport minimum - smallest between vh and vw 4% */
+}
+
+h1 {
+    color: orange;
+    font-size: 3vmin;
+}
+
+#board {
+    display: grid;
+    gap: 1vmin;
+    grid-template-columns: repeat(3, 10vmin);
+    grid-template-rows: repeat(3, 10vmin);
+    margin: 4vmin;
+
+}
+
+#board > div {
+    border: 0.1vmin solid gray;
+    cursor: pointer;
+    color: pink;
+    font-size: 50px;
+    text-align: center;
+    transition: all 0.3s ease-in;
+}
+
+#board > div:hover {
+    background-color: orange;
+    color: white;
+}
+
+button {
+    border: 0.1vmin solid beige;
+    border-radius: 4vmin;
+    color: pink;
+    cursor: pointer;
+    font-size: 2vmin;
+    margin-top: 4vmin;
+    padding: 2vmin;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    background-color: darkgray;
+    color: white;
+}
