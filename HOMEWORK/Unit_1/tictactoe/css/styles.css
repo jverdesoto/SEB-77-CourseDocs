@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    background-color: rgb(28, 27, 41);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    font-size: 7vmin;
+    color: rgb(218, 213, 213);
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 1vmin;
+}
+
+h1 {
+    color: white;
+    font-size: 3vmin;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 15vmin);
+    grid-template-rows: repeat(3, 15vmin);
+    margin-top: 3vmin;
+}
+
+.borderRB {
+    border-right: 0.5vmin solid gray;
+    border-bottom: 0.5vmin solid gray;
+}
+
+.borderB {
+    border-right: 0.5vmin solid gray;
+}
+
+.borderR {
+    border-bottom: 0.5vmin solid gray;
+}
+
+#bottom {
+    border-bottom: none;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 15vmin;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 10vmin;
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#reset {
+    border: 0.1vmin solid gray;
+    border-radius: 1vmin;
+    color: gray;
+    font-size: 2vmin;
+    margin-top: 6vmin;
+    padding: 1vmin;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#reset:hover {
+    background-color: darkgray;
+    color: white;
+}
+
+.pink {
+    color: deeppink;
+}
+
+.green {
+    color: lime;
+}

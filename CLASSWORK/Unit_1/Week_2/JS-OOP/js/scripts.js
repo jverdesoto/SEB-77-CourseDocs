@@ -110,39 +110,75 @@
 // console.log(myCar2.whatColorAmI())
 
 
+// class Person {
+//     constructor(name, surname){
+//         this.name = name
+//         this.surname = surname
+//     }
+//     sayHello() {
+//         return `Hello my name is ${this.name} ${this.surname}`
+//     }
+// }
+
+// const person = new Person('Rick', 'Keenan')
+
+// console.log(person.sayHello());
+
+// class Emplyee {
+//     constructor(person, company, wage) {
+//         this.person = person
+//         this.company = company
+//         this.wage = wage
+//         this.active = true
+//     }
+//     receiveRaise(amount){
+//         this.wage = amount
+//     }
+//     terminate() {
+//         this.active = false
+//     }
+// }
+
+// const employee = new Emplyee(person, 'microsoft', 100000)
+
+// console.log(employee.person.name);
+
+// employee.receiveRaise(120000)
+
+// console.log(employee.wage)
+
+
+
+
 class Person {
-    constructor(name, surname){
+    constructor (name, surname, age) {
         this.name = name
         this.surname = surname
+        this.age = age
     }
-    sayHello() {
-        return `Hello my name is ${this.name} ${this.surname}`
+    birthday() {
+        this.age += 1
     }
 }
 
-const person = new Person('Rick', 'Keenan')
+const maf = new Person('Mafalda', 'Ventura', 31)
 
-console.log(person.sayHello());
+class Student extends Person {
+    constructor (name, surname, age, approvedUnitOne) {
+        super(name, surname, age)
+        this.approvedUnitOne = approvedUnitOne
+    }
+}
 
-class Emplyee {
-    constructor(person, company, wage) {
+class Instructor {
+    constructor(person, reviewedUnitOne) {
         this.person = person
-        this.company = company
-        this.wage = wage
-        this.active = true
-    }
-    receiveRaise(amount){
-        this.wage = amount
-    }
-    terminate() {
-        this.active = false
+        this.reviewedUnitOne = reviewedUnitOne
     }
 }
 
-const employee = new Emplyee(person, 'microsoft', 100000)
+const toby = new Student('Toby', 'Kittow', 26, true)
 
-console.log(employee.person.name);
+const joe = new Person('Joe', 'Freeman', 32)
 
-employee.receiveRaise(120000)
-
-console.log(employee.wage)
+const ta = new Instructor(joe, true)
