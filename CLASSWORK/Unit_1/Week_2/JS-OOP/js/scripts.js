@@ -2,12 +2,17 @@
 /*
     - OOP: Using OBJECTS to represent real world things.
     - Objects have own properties and functions (methods)
-    - Objects contain data and methods to represent info about what you're trying to model
+    - Objects contain data and methods to  represent info about what you're trying to model
     ex: 
     function Ship() {
         this.floats = true
         this.material = "steel"
     }
+
+
+
+
+
 
     - Data is encapsulated, conained within the scope
     - In classic OOP, a class is defined, then when an instance of is created, all the properties are *copied* over from the constructor to the instance
@@ -110,39 +115,73 @@
 // console.log(myCar2.whatColorAmI())
 
 
+// class Person {
+//     constructor(name, surname){
+//         this.name = name
+//         this.surname = surname
+//     }
+//     sayHello() {
+//         return `Hello my name is ${this.name} ${this.surname}`
+//     }
+// }
+
+// const person = new Person('Rick', 'Keenan')
+
+// console.log(person.sayHello());
+
+// class Emplyee {
+//     constructor(person, company, wage) {
+//         this.person = person
+//         this.company = company
+//         this.wage = wage
+//         this.active = true
+//     }
+//     receiveRaise(amount){
+//         this.wage = amount
+//     }
+//     terminate() {
+//         this.active = false
+//     }
+// }
+
+// const employee = new Emplyee(person, 'microsoft', 100000)
+
+// console.log(employee.person.name);
+
+// employee.receiveRaise(120000)
+
+// console.log(employee.wage)
+
+
 class Person {
-    constructor(name, surname){
+    constructor(name, surname, age) {
         this.name = name
         this.surname = surname
+        this.age = age
     }
-    sayHello() {
-        return `Hello my name is ${this.name} ${this.surname}`
+
+    birthday() {
+        this.age += 1
     }
 }
 
-const person = new Person('Rick', 'Keenan')
+const alfie = new Person('Alfie', 'Binnie', 26)
 
-console.log(person.sayHello());
+class Student extends Person {
+    constructor(name, surname, age, approvedUnitOne) {
+        super(name, surname, age)
+        this.approvedUnitOne = approvedUnitOne
+    }
+}
 
-class Emplyee {
-    constructor(person, company, wage) {
+class Instructor {
+    constructor(person, reviewUnitOne) {
         this.person = person
-        this.company = company
-        this.wage = wage
-        this.active = true
-    }
-    receiveRaise(amount){
-        this.wage = amount
-    }
-    terminate() {
-        this.active = false
+        this.reviewUnitOne = reviewUnitOne
     }
 }
 
-const employee = new Emplyee(person, 'microsoft', 100000)
+const joe = new Person('Joe', 'Freeman', 32)
 
-console.log(employee.person.name);
+const ta = new Instructor(joe, true);
 
-employee.receiveRaise(120000)
-
-console.log(employee.wage)
