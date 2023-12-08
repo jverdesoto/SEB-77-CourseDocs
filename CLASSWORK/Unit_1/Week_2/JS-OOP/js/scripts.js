@@ -110,39 +110,95 @@
 // console.log(myCar2.whatColorAmI())
 
 
+// class Person {
+//     constructor(name, surname){
+//         this.name = name
+//         this.surname = surname
+//     }
+//     sayHello() {
+//         return `Hello my name is ${this.name} ${this.surname}`
+//     }
+// }
+
+// const person = new Person('Rick', 'Keenan')
+
+// console.log(person.sayHello());
+
+// class Emplyee {
+//     constructor(person, company, wage) {
+//         this.person = person
+//         this.company = company
+//         this.wage = wage
+//         this.active = true
+//     }
+//     receiveRaise(amount){
+//         this.wage = amount
+//     }
+//     terminate() {
+//         this.active = false
+//     }
+// }
+
+// const employee = new Emplyee(person, 'microsoft', 100000)
+
+// console.log(employee.person.name);
+
+// employee.receiveRaise(120000)
+
+// console.log(employee.wage)
+
+
+// class Ship {
+//     constructor(floats, material) {
+//         this.floats = floats
+//         this.material = material
+//     }
+// }
+
+// const myShip = new Ship(true, 'fiberglass')
+
 class Person {
-    constructor(name, surname){
+    constructor (name, surname, age) {
         this.name = name
         this.surname = surname
+        this.age = age
     }
-    sayHello() {
-        return `Hello my name is ${this.name} ${this.surname}`
+    birthday() {
+        this.age += 1
     }
 }
 
-const person = new Person('Rick', 'Keenan')
+const evy = new Person ('Evylina', 'Antao', 27) 
 
-console.log(person.sayHello());
+// console.log(evy)
+// evy.birthday(evy)
+// console.log(evy)
 
-class Emplyee {
-    constructor(person, company, wage) {
+class Student extends Person {
+    constructor (name, surname, age, approvedUnitOne) {
+        super (name, surname, age)
+        this.approvedUnitOne = approvedUnitOne
+    }
+}
+// if i wanted to add approvedUnitOne to Evy I would have to redo Evy
+
+// const toby = new Student ('Toby', 'Kittow', 26, true)
+
+// console.log(toby)
+// toby.birthday()
+// console.log(toby.age)
+
+
+// in the case below you should be able to add new elments to evy without having to redo evy
+class Instructor {
+    constructor (person, reviewUnitOne) {
         this.person = person
-        this.company = company
-        this.wage = wage
-        this.active = true
-    }
-    receiveRaise(amount){
-        this.wage = amount
-    }
-    terminate() {
-        this.active = false
+        this.reviewUnitOne = reviewUnitOne
     }
 }
 
-const employee = new Emplyee(person, 'microsoft', 100000)
+const joe = new Person ('Joe', 'Freeman', 32)
 
-console.log(employee.person.name);
+const ta = new Instructor(joe, true)
 
-employee.receiveRaise(120000)
-
-console.log(employee.wage)
+console.log(ta)

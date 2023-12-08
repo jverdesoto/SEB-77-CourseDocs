@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Rajdhani", sans-serif;
+  font-family: "Shadows Into Light", cursive;
+  color: #e1e3e6
+}
+
+body > div {
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+h1 {
+    margin-bottom: 1vmin;
+    font-size: 4vmin;
+}
+
+h3 {
+    margin: 0 0 10vmin;
+    font-size: 3vmin;
+    color: #FF10F0;
+    transition: all 0.3s ease;
+}
+
+.container {
+    height: 60vmin;
+    width: 60vmin;
+    display: grid;
+    grid-template-columns: repeat(3, 20vmin);
+    grid-template-rows: repeat(3, 20vmin);
+}
+
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vmin;
+    width: 20vmin;
+    border: 1px solid gray;
+    font-size: 10vmin;
+}
+
+#zero, #one, #two {
+    border-top: none;
+}
+
+#zero, #three, #six {
+    border-left: none;
+}
+
+#two, #five, #eight {
+    border-right: none;
+}
+
+#six, #seven, #eight {
+    border-bottom: none;
+}
+
+button {
+    margin: 10vmin 0 5vmin; 
+    border-radius: 3vmin;
+    border: none;
+    background-color: gray;
+    padding: 1.5vmin;
+    cursor: pointer;
+    font-size: 1.5vmin;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    background-color: darkgray;
+    color: white;
+} 
