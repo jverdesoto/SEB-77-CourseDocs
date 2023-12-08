@@ -9,6 +9,13 @@
         this.material = "steel"
     }
 
+
+
+
+
+
+
+
     - Data is encapsulated, conained within the scope
     - In classic OOP, a class is defined, then when an instance of is created, all the properties are *copied* over from the constructor to the instance
     ex as a class: 
@@ -110,39 +117,68 @@
 // console.log(myCar2.whatColorAmI())
 
 
+// class Person {
+//     constructor(name, surname){
+//         this.name = name
+//         this.surname = surname
+//     }
+//     sayHello() {
+//         return `Hello my name is ${this.name} ${this.surname}`
+//     }
+// }
+
+// const person = new Person('Rick', 'Keenan')
+
+// console.log(person.sayHello());
+
+// class Emplyee {
+//     constructor(person, company, wage) {
+//         this.person = person
+//         this.company = company
+//         this.wage = wage
+//         this.active = true
+//     }
+//     receiveRaise(amount){
+//         this.wage = amount
+//     }
+//     terminate() {
+//         this.active = false
+//     }
+// }
+
+// const employee = new Emplyee(person, 'microsoft', 100000)
+
+// console.log(employee.person.name);
+
+// employee.receiveRaise(120000)
+
+// console.log(employee.wage)
+
 class Person {
-    constructor(name, surname){
+    constructor(name, surname, age){
         this.name = name
         this.surname = surname
+        this.age = age
     }
-    sayHello() {
-        return `Hello my name is ${this.name} ${this.surname}`
-    }
-}
-
-const person = new Person('Rick', 'Keenan')
-
-console.log(person.sayHello());
-
-class Emplyee {
-    constructor(person, company, wage) {
-        this.person = person
-        this.company = company
-        this.wage = wage
-        this.active = true
-    }
-    receiveRaise(amount){
-        this.wage = amount
-    }
-    terminate() {
-        this.active = false
+    birthday(){
+        this.age += 1
     }
 }
 
-const employee = new Emplyee(person, 'microsoft', 100000)
+const tam = new Person('Tam', 'Parlak', 25)
+console.log(tam)
+tam.birthday()
+console.log(tam)
 
-console.log(employee.person.name);
 
-employee.receiveRaise(120000)
+class Student extends Person {
+    constructor(name, surname, age, approvedUnitOne){
+        super(name, surname, age)
+        this.approvedUnitOne = approvedUnitOne
+    }
+}
 
-console.log(employee.wage)
+const toby = new Student('Toby', 'Kittow', 26, true)
+console.log(toby)
+toby.birthday()
+console.log(toby)
