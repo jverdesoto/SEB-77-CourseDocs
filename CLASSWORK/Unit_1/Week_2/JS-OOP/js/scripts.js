@@ -1,17 +1,17 @@
 // Object-oriented Javascript
-/*
-    - OOP: Using OBJECTS to represent real world things.
-    - Objects have own properties and functions (methods)
-    - Objects contain data and methods to represent info about what you're trying to model
-    ex: 
+
+    // - OOP: Using OBJECTS to represent real world things.
+    // - Objects have own properties and functions (methods)
+    // - Objects contain data and methods to represent info about what you're trying to model
+    // ex: 
     function Ship() {
         this.floats = true
         this.material = "steel"
     }
 
-    - Data is encapsulated, conained within the scope
-    - In classic OOP, a class is defined, then when an instance of is created, all the properties are *copied* over from the constructor to the instance
-    ex as a class: 
+    // - Data is encapsulated, conained within the scope
+    // - In classic OOP, a class is defined, then when an instance of is created, all the properties are *copied* over from the constructor to the instance
+    // ex as a class: 
     function Ship() {
         this.floats = true
         this.material = "steel"
@@ -22,15 +22,15 @@
     const myShip = new Ship()
     myShip.whatAmI()
 
-    - JavaScript is dynamic and does not provide a traditional class implementation
-    - Javascript inheritance is prototype based
-    - Each Object has a private property called Prototype
-    - The Prototype can have a Protoype of its own (walking up the chain)
-    ex: 
-    const myObj {
-        a: 1,
-        b: 2
-    }
+    // - JavaScript is dynamic and does not provide a traditional class implementation
+    // - Javascript inheritance is prototype based
+    // - Each Object has a private property called Prototype
+    // - The Prototype can have a Protoype of its own (walking up the chain)
+    // ex: 
+                // const myObj {
+                //     // a: 1,
+                //     // b: 2
+                // }
     console.log(myObj.a)
     // Does myObj have a key of a ?
     // Yes
@@ -43,10 +43,10 @@
     const myString = 'hello'
     console.log(mystring.charAt(0))
     console.log(mystring.vlaueOf())
-    - Nearly of all objects in JS are instances of Object which seats on top of the Protitype chain
-    - The Prototype stores the property's value
-    - Bucket to store properties and methods
-    - Prototype as a template
+    // - Nearly of all objects in JS are instances of Object which seats on top of the Protitype chain
+    // - The Prototype stores the property's value
+    // - Bucket to store properties and methods
+    // - Prototype as a template
 
     Constructors:
     function myClass(value1, value2) {
@@ -68,46 +68,46 @@
         }
     }
 
-*/
 
-// function Car(topSpeed, model, manufacturer, color) {
-//     const obj = {}
-//     obj.topSpeed = topSpeed
-//     obj.model = model
-//     obj.manufacturer = manufacturer
-//     obj.color = color
-//     return obj
-// }
 
-// function Car(topSpeed, model, manufacturer, color) {
-//     this.topSpeed = topSpeed
-//     this.model = model
-//     this.manufacturer = manufacturer
-//     this.color = color
-// }
+function Car(topSpeed, model, manufacturer, color) {
+    const obj = {}
+    obj.topSpeed = topSpeed
+    obj.model = model
+    obj.manufacturer = manufacturer
+    obj.color = color
+    return obj
+}
 
-// class Car {
-//     constructor(topSpeed, model, manufacturer, color){
-//         this.topSpeed = topSpeed
-//         this.model = model
-//         this.manufacturer = manufacturer
-//         this.color = color
-//     }
-//     whatColorAmI() {
-//         return `I am ${this.color}`;
-//     }
-// }
+function Car(topSpeed, model, manufacturer, color) {
+    this.topSpeed = topSpeed
+    this.model = model
+    this.manufacturer = manufacturer
+    this.color = color
+}
 
-// const myCar = new Car(200, 'M3', 'BMW', 'green')
-// const myCar2 = new Car(130, 'Polo', 'VW', 'black')
+class Car {
+    constructor(topSpeed, model, manufacturer, color){
+        this.topSpeed = topSpeed
+        this.model = model
+        this.manufacturer = manufacturer
+        this.color = color
+    }
+    whatColorAmI() {
+        return `I am ${this.color}`;
+    }
+}
 
-// console.log(myCar.topSpeed)
-// console.log(myCar2.topSpeed)
+const myCar = new Car(200, 'M3', 'BMW', 'green')
+const myCar2 = new Car(130, 'Polo', 'VW', 'black')
 
-// document.getElementById('name').innerHTML = myCar.whatColorAmI()
+console.log(myCar.topSpeed)
+console.log(myCar2.topSpeed)
 
-// console.log(myCar.whatColorAmI())
-// console.log(myCar2.whatColorAmI())
+document.getElementById('name').innerHTML = myCar.whatColorAmI()
+
+console.log(myCar.whatColorAmI())
+console.log(myCar2.whatColorAmI())
 
 
 class Person {
