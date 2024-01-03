@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Where can I get lunch around here?</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.classless.min.css" />
+</head>
+<body>
+  <main>
+    <nav>
+      <ul>
+        <li><a href="/">&lt; Back</a></li>
+      </ul>
+    </nav>
+
+    <h1>Where can I get lunch around here?</h1>
+
+    <ul>
+      <% eateries.forEach(function(e) { %>
+        <li>
+          <a href="/eateries/<%= e.id %>"><%= e.name %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
+</body>
+</html>
