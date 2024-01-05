@@ -2,7 +2,7 @@
 import DogList from '@/components/DogList.vue';
 import { ref, onMounted } from 'vue';
 
-  const API_URL = 'http://localhost:4000/dogs'
+  const API_URL = `${import.meta.env.VITE_API_URL}/dogs`
   const myDogs = ref([])
 
   onMounted(() => {
