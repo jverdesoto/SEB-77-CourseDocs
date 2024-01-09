@@ -13,6 +13,7 @@
                 <strong><router-link :to="{ name: 'dog', params: { id: dog.id } }"> {{ dog.name }} </router-link></strong>
                 - {{ dog.age }} years old</li>
         </ul>
+        <a href="cats/fact">Cat Fact</a>
     </div>
 
 </template>

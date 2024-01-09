@@ -6,6 +6,7 @@ import dogs from './models/dogs.js'
 
 const app = express()
 
+
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -32,4 +33,11 @@ app.get('/dogs/:id', (req, res) => {
     ))
 
     res.json(dog)
+})
+
+app.get('/cats/fact', (req, res) => {
+    fetch(process.env.CAT_URL)
+    .then(response => response.json())
+    .then(data => res.json(data.fact))
+    .catch(error => console.error('Error fetching', error))
 })
