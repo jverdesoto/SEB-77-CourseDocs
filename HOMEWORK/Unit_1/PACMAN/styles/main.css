@@ -7,6 +7,9 @@ body {
   margin: 0;
 }
 
+h1 {
+  text-align: center;
+}
 
 .grid-wrapper {
   height: 100vh;
