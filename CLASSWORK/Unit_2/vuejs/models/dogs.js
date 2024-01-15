@@ -22,10 +22,10 @@ const dogs = [
     },
     {
         id: 4,
-        name: 'Thor',
-        age: 2,
-        breed: 'Golden retreiver',
-        img: 'https://cdn.pixabay.com/photo/2018/03/31/06/31/dog-3277416_640.jpg'
+        name: 'Poppy',
+        age: 16,
+        breed: 'Staffordshire Bull Terrier',
+        img: 'https://dogtime.com/wp-content/uploads/sites/12/2023/09/GettyImages-1418252093-e1695215819445.jpg?w=1024'
     },
     {
         id: 5,

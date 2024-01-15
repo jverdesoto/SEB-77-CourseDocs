@@ -1,9 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import {RouterLink} from 'vue-router'
+import { useCookies } from 'vue3-cookies'
+import { decodeCredential, googleLogout} from 'vue3-google-login'
 import NewBook from '@/components/NewBook.vue'
 //@ avoids ..//..//..// it doesnt matter where you are.
 const booksBe = ref([])
+const isLoggedIn = ref(false)
+
+const { cookies } = useCookies()
+const userName = ref('')
+
 //fecth begins a promise so afterward. then
 // onMounted(() => {
 //     fetch(`${import.meta.env.VITE_API_URL}/books`)
@@ -30,8 +37,19 @@ function deleteBook(bookId) {
         fetchData()
     })
 }
+function checkSession() {
+    if ( cookies.isKey('user_session') ) {
+        isLoggedIn.value = true
+        const userData = decodeCredential(cookies.get('user_session'))
+        userName.value = userData.given_name
+    }
 
-onMounted(fetchData)
+}
+
+onMounted(() => {
+    fetchData()
+    checkSession()
+})
 </script>
 
 <template>
@@ -45,7 +63,8 @@ onMounted(fetchData)
         
     </ul>
     <hr>
-    <NewBook />
-    <!-- this is the heart of vue cause of its syntax -->
-    <!-- location of it is also important -->
+    <div >
+        <NewBook v-if="isLoggedIn" :fetchData="fetchData" />
+    </div>
+    
 </template>

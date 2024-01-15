@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 //because we are using eslink format errors not coding.
 // {} deconstruct fetch
+const {fetchData} = defineProps(['fetchData'])
 const book = ref({
     title: '',
     author: '',

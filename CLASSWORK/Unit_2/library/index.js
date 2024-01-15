@@ -37,6 +37,10 @@ const userSchema = new mongoose.Schema({
     userEmail: {
         type: String,
         required: true
+    },
+    lastLogin: {
+        type: Date,
+        requird: true
     }
 })
 
@@ -137,9 +141,9 @@ app.put('/books/:id', async (req, res) => {
     }
 
     async function updateBook(){
-        console.log(req.body)
+
         const author= await Author.findOne({"name": req.body.author})
-        console.log(req.params.id);
+        
         Book.updateOne({"_id": req.params.id}, {title: req.body.title, year: req.body.year, author: author})
 
         .then(() => {
@@ -192,6 +196,7 @@ app.post('/user/login', async (req, res) => {
     // create a new user if it doesnt exist
     if ( await User.countDocuments({"userEmail": req.body.userEmail}) === 0 ) {
         const newUser = new User({
+            userEmail: req.body.userEmail,
             lastLogin: now
         })
         newUser.save()

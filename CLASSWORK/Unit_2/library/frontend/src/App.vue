@@ -1,11 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+
+
+// set cookies here? before login
 </script>
 
 <template>
   <header>
 
-
+  
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>

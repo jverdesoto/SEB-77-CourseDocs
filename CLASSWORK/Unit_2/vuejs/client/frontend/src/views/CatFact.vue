@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 
 const catFact = ref({})
-const CAT_URL = `${import.meta.env.VITE_API_URL}/cats/fact`
+const CAT_URL = `${import.meta.env.VITE_API_URL}/cat/facts`
 
 const fetchCatFact = () =>{
     fetch(CAT_URL)
