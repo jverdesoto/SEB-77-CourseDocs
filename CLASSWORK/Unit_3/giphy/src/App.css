@@ -1,0 +1,33 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 75px;
+  background-color: white;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-clip: text;
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+}
+
+
+body {
+  background-color: rgb(34, 37, 41);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
