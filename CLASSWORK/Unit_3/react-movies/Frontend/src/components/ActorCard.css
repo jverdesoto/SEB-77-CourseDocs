@@ -1,0 +1,18 @@
+.actorCard {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+.backgroundImageActor {
+    background-size: cover;
+    background-position: center;
+}
